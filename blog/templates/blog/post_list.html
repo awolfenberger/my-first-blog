@@ -6,17 +6,12 @@
         <div>
             <h1><a href="">wolfenwriter: comics. cocktails. coding.</a></h1>
         </div>
-
-        <div>
-            <h2><a href="">My first post</a></h2>
-            <p>published: 14.06.2014, 12:14</p>
-            <p>San Diego Comic Con 2015 was more chill thanks to off-site events pulling more crowds out of the convention center.</p>
-        </div>
-
-        <div>
-            <h2><a href="">My second post</a></h2>
-            <p>published: 14.06.2014, 12:14</p>
-            <p>Rose City Comic Con is still a month away and already has given us a lot to get excited about seeing!</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>published: {{ post.published_date }}</p>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
